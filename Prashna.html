@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Prashna 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .page {
+            display: none;
+            padding: 60px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.8;
+        }
+
+        button {
+            background-color: #fff0f5;
+            color: #ff4d88;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            margin-top: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffe6ef;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 15px;
+            margin: 10px;
+            box-shadow: 0 0 10px #fff;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Heart shower */
+        .heart {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 8s linear infinite;
+            opacity: 0.6;
+            z-index: 998;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .heart:nth-child(1) {
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 15%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(3) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(4) {
+            left: 35%;
+            animation-delay: 0.5s;
+        }
+
+        .heart:nth-child(5) {
+            left: 45%;
+            animation-delay: 1.5s;
+        }
+
+        .heart:nth-child(6) {
+            left: 55%;
+            animation-delay: 2.5s;
+        }
+
+        .heart:nth-child(7) {
+            left: 65%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(8) {
+            left: 75%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(9) {
+            left: 85%;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas" class="confetti"></canvas>
+
+    <!-- Page 1 -->
+    <div class="page active" id="page1">
+        <h1>Happy Birthday, Prashna 🎂</h1>
+        <p>You are the light of my life and the most beautiful soul I've ever met. 💖</p>
+        <button onclick="nextPage(2)">Click for a surprise 💌</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page" id="page2">
+        <h1>You Mean the World to Me ❤️</h1>
+        <p>
+            We’ve had our fights, our little storms, and silent wars... <br>
+            But somehow, we always come back to each other — stronger and more in love. <br><br>
+            You make my chaos calm, my emptiness full, and my world so beautiful. I’m lucky I get to love you.
+        </p>
+        <button onclick="nextPage(3)">Continue 💫</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page" id="page3">
+        <h1>You're My Forever 🌈</h1>
+        <p>
+            You’ve taught me love, patience, and the value of holding on. <br>
+            I know we’ll keep growing, building, arguing, loving — but always staying close. <br><br>
+            On your special day, I promise to always be there, to cheer you on, wipe your tears, and fight with and for
+            you. 💕
+        </p>
+        <button onclick="nextPage(4)">See Our Memories 📸</button>
+    </div>
+
+    <!-- Page 4 - Gallery -->
+    <div class="page" id="page4">
+        <h1>Our Beautiful Moments Together 💞</h1>
+        <div class="gallery">
+            <img src="uss.jpg" alt="Us 1">
+            <img src="Prashnuu.jpg" alt="Us 2">
+            <img src="1000526105 (1).jpg" alt="Us 3">
+            <img src="1000526105.jpg" alt="Us 4">
+            <img src="1000527280.jpg" alt="us 5">
+
+            <!-- Add more photos if you want -->
+        </div>
+        <p>Every photo is a memory, and every memory is a reason to keep falling in love with you. 💗</p>
+    </div>
+
+    <script>
+        // Page transition
+        function nextPage(pageNumber) {
+            document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+            const next = document.getElementById("page" + pageNumber);
+            next.classList.add("active");
+            window.scrollTo(0, 0);
+
+            if (pageNumber === 4) {
+                startConfetti();
+                setTimeout(() => {
+                    alert("Surprise! I Love You, Prashna ❤️");
+                }, 1000);
+            }
+        }
+
+        // Confetti Effect (Canvas)
+        const canvas = document.getElementById("confettiCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let confetti = [];
+
+        function randomColor() {
+            const colors = ["#ff0a54", "#ff477e", "#ff7096", "#ff85a1", "#fbb1bd"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function createConfettiPiece() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                size: Math.random() * 10 + 5,
+                color: randomColor(),
+                speed: Math.random() * 3 + 2
+            };
+        }
+
+        function startConfetti() {
+            for (let i = 0; i < 100; i++) {
+                confetti.push(createConfettiPiece());
+            }
+            requestAnimationFrame(updateConfetti);
+        }
+
+        function updateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confetti.forEach((c, i) => {
+                ctx.fillStyle = c.color;
+                ctx.beginPath();
+                ctx.arc(c.x, c.y, c.size, 0, 2 * Math.PI);
+                ctx.fill();
+                c.y += c.speed;
+                if (c.y > canvas.height) {
+                    confetti[i] = createConfettiPiece();
+                }
+            });
+            requestAnimationFrame(updateConfetti);
+        }
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
+</body>
+
+</html>
